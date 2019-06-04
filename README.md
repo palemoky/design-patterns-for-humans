@@ -63,7 +63,7 @@
 维基版
 > 在面向对象编程（OOP）中，工厂是用于创建其他对象的对象——形式上，工厂是一个函数或者方法，它从某个方法调用返回不同类型或类的对象。
 
-### 代码示例
+### 编程示例
 首先，我们创建一个门的接口和实现
 ```php
 interface Door
@@ -131,7 +131,7 @@ $door2 = DoorFactory::makeDoor(50, 100);
 维基版
 > 在基于类的编程中，工厂方法模式是一种创建型的模式，它使用工厂方法来处理创建对象的问题，而不必指定将要创建对象的确切类。通过调用工厂方法，而不是通过调用构造方法来完成对象的创建。
 
-### 代码示例
+### 编程示例
 依然采用招聘经理的例子。我们首先创建一个面试者的接口与一些实现
 ```php
 interface Interviewer
@@ -212,7 +212,7 @@ $marketingManager->takeInterview(); // Output: Asking about community building.
 维基版
 > 抽象工厂提供了一种将一组互相独立的工厂封装起来的方式，而无需指定它们具体的类。
 
-### 代码示例
+### 编程示例
 我们来将上边不同门的示例翻译为代码:
 ```php
 interface Door
@@ -343,7 +343,7 @@ public function __construct($size, $cheese = true, $pepperoni = true, $tomato = 
 
 如你所见，构造函数的参数可能很快就会失控，而且你很难接参数的排列方式，另外，如果你想再添加更多的参数，参数列表会变得更长，这便是弹性构造函数的反模式问题。
 
-### 代码示例
+### 编程示例
 对于以上问题，明智的选择是使用生成器模式，首先我们有想要的汉堡
 ```php
 class Burger
@@ -438,7 +438,7 @@ $burger = (new BurgerBuilder(14))
 
 简而言之，原型模式允许你创建一个现有对象的副本，并根据需要修改它，而不是从头创建一个对象。
 
-### 代码示例
+### 编程示例
 在`PHP`中，我们很容易通过`clone`关键字来实现
 ```php
 class Sheep
@@ -504,7 +504,7 @@ echo $cloned->getCategory(); // Mountain sheep
 
 单例模式实际上被认为是一种反模式，应该**避免过度使用**它。它不一定是坏的，可能有一些非常有效的场景，但应该谨慎使用，因为它在应用程序中**引入了一个全局状态**，在一个地方对其进行更改可能会影响到其他部分，并且非常难以调试。单例模式另一个缺点是，它使代码耦合性增大，并且模拟单例可能很难。
 
-### 代码示例
+### 编程示例
 **创建一个单例模式，需要私有化构造方法、禁用克隆、禁用继承，并且创建一个静态变量来存放实例。**
 ```php
 final class President
@@ -570,7 +570,7 @@ var_dump($president1 === $president2); // true
 维基版
 > 在软件工程中，适配器模式是一种软件设计模式，它允许将现有类的接口用作另一个接口。它通常用于使现有类在不修改源代码的情况下与其他类协作。
 
-### 代码示例
+### 编程示例
 假设有一个猎人在狩猎狮子。
 首先，我们有一个`Lion`接口。
 ```php
@@ -653,7 +653,7 @@ $hunter->hunt($wildDogAdapter);
 维基版
 > 桥接模式是软件工程中使用的一种设计模式，其目的是“把事物对象和其具体行为、具体特征分离开来，使它们可以各自独立的变化”。
 
-### 代码示例
+### 编程示例
 继续我们上述的网页主题例子，我们先将页面独立
 ```php
 interface WebPage
@@ -746,7 +746,7 @@ echo $careers->getContent(); // "Careers page in Dark Black";
 维基版
 > 在软件工程中，组合模式是一种分区设计模式。组合模式描述的是将一组对象看做单个对象相同的处理方式。组合的目的是将对象“组合”到树结构中去，以表示部分与整体的层次结构，实现组合模式允许客户端同一处理单个对象与组合。
 
-### 代码示例
+### 编程示例
 继续上述公司与员工的例子，此处我们有不同的员工类型
 ```php
 interface Employee
@@ -873,7 +873,7 @@ echo "Net salaries: " . $organization->getNetSalaries(); // Net Salaries: 27000
 维基版
 > 在 OOP 中，装饰器模式是一种设计模式，它允许将行为静态或动态地添加到单个对象中，而不影响来自同一类的其他对象的行为。装饰器模式通常有助于保持单一职责原则，因为它可以将功能划分为具有独立关注的部分。
 
-### 代码示例
+### 编程示例
 我们以咖啡为例，首先，我们有一个从`Coffee`接口实现的`SimpleCoffee`
 ```php
 interface Coffee
@@ -988,7 +988,7 @@ echo $someCoffee->getDescription(); // Simple Coffee, milk, whip, vanilla
 维基版
 > 外观模式是一个对象，它为更大的代码体（如类库）提供了一个简化的接口。
 
-### 代码示例
+### 编程示例
 继续以上述的计算机为例，此处我们有一个`Computer`类
 ```php
 class Computer
@@ -1075,7 +1075,7 @@ $computer->turnOff(); // Bup bup buzzz! Haah! Zzzzz
 维基版
 > 在计算机编程中，享元模式是一种软件设计模式。享元模式是通过与其他相似对象共享尽可能多的数据来最小化内存使用的对象。
 
-### 代码示例
+### 编程示例
 仍以上述的茶为例，首先，我们有不同的茶和茶壶
 ```php
 // 任何被缓存的都是享元
@@ -1151,7 +1151,7 @@ $shop->serve();
 维基版
 > 代理，在其最一般的形式中，是一个作为其他接口的类。代理是客户端调用的包装器或代理对象，用于访问后台的真实服务对象。使用代理可以简单地转发，也可以提供额外的逻辑，如当对象上的操作是资源密集型时进行缓存，或者在调用对象前检查先决条件等。
 
-### 代码示例
+### 编程示例
 首先，我们有一个门的接口并实现它
 ```php
 interface Door
@@ -1245,7 +1245,7 @@ $door->close(); // Closing lab door
 维基版
 > 责任链模式在 OOP 中是一种软件设计模式，它包含了一些命令对象和一系列的处理对象。每一个处理对象决定它能处理哪些命令对象，它也直到如何将它不能处理的命令对象传递给该链中的下一个处理对象。
 
-### 代码示例
+### 编程示例
 将例子翻译为代码。首先，我们创建一个账户
 ```php
 abstract class Account
@@ -1337,7 +1337,7 @@ $bank->pay(259);
 维基版
 > 在 OOP 编程中，命令模式是一种设计模式，它尝试以对象来代替实际行动。命令对象可以把行动及其参数封装起来，于是这些行动可以被取消、重复多次、取消后又再重做。
 
-### 代码示例
+### 编程示例
 首先，我们创建一个接收者，它实现了所有可以执行的操作
 ```php
 // Receiver
@@ -1452,7 +1452,7 @@ $remote->submit($turnOff); // Darkness!
 维基版
 > 在 OOP 中，迭代器是一种设计模式，用于遍历容器并访问容器中的元素。迭代器模式将算法与容器解耦，但在某些情况下，因算法依赖于某些容器而无法解耦。
 
-### 代码示例
+### 编程示例
 在 PHP 中，通过 SPL(Standard PHP Library，PHP 标准库)非常容易实现迭代器。将上述例子翻译为代码。首先，我们创建一个 `RadioStation` 类
 ```php
 class RadioStation
@@ -1555,7 +1555,7 @@ $stationList->removeStation(new RadioStation(89)); // Will remove station 89
 维基版
 > 在软件工程领域，中介者模式定义了一个中介者对象，该对象封装了系统中对象间的交互方式。由于它可以在运行时改变程序的行为，这种模式是一种行为型模式 。<sup>2</sup>
 
-### 代码示例
+### 编程示例
 这里有一个简单的聊天室的例子，首先，我们创建一个中介者（聊天室）
 ```php
 interface ChatRoomMediator 
@@ -1624,7 +1624,7 @@ $jane->send('Hey!');
 
 备忘录模式通常在你需要提供撤销操作时非常有用。
 
-### 代码示例
+### 编程示例
 仍以 Word 编辑为例，首先，我们创建一个备忘录对象来储存状态
 ```php
 class EditorMemento
@@ -1702,7 +1702,415 @@ $editor->getContent(); // This is the first sentence. This is second.
 维基版
 > 
 
-### 代码示例
+### 编程示例
+
+## 🏃 访问者模式
+现实案例
+> 想象一下去迪拜旅游的人，他门只需要办好签证，就可以在迪拜畅游无阻。你只需要告诉他们地址，他们就可以去尽情游玩。同样的，访问者模式允许你添加要访问的地点，从而使你参观更多的地方，而无需做额外的工作。
+
+白话版
+> 访问者模式允许你不做任何的变动就可以将进一步的操作添加到对象中。
+
+维基版
+> 在 OOP 中，访问者模式是一种将算法从其操作的对象结构中分离出来的方法。这种分离可以在不修改现有对象的情况下对其添加新的啊哦做。这遵循了开闭原则。
+
+### 编程示例
+以动物园为例，我们让不同的动物发出不同的声音
+```php
+// Visitee
+interface Animal
+{
+    public function accept(AnimalOperation $operation);
+}
+
+// Visitor
+interface AnimalOperation
+{
+    public function visitMonkey(Monkey $monkey);
+    public function visitLion(Lion $lion);
+    public function visitDolphin(Dolphin $dolphin);
+}
+```
+
+接下来，我们需要创建具体的动物
+```php
+class Monkey implements Animal
+{
+    public function shout()
+    {
+        echo 'Ooh oo aa aa!';
+    }
+
+    public function accept(AnimalOperation $operation)
+    {
+        $operation->visitMonkey($this);
+    }
+}
+
+class Lion implements Animal
+{
+    public function roar()
+    {
+        echo 'Roaaar!';
+    }
+
+    public function accept(AnimalOperation $operation)
+    {
+        $operation->visitLion($this);
+    }
+}
+
+class Dolphin implements Animal
+{
+    public function speak()
+    {
+        echo 'Tuut tuttu tuutt!';
+    }
+
+    public function accept(AnimalOperation $operation)
+    {
+        $operation->visitDolphin($this);
+    }
+}
+```
+
+现在，让我们来实现访客
+```php
+class Speak implements AnimalOperation
+{
+    public function visitMonkey(Monkey $monkey)
+    {
+        $monkey->shout();
+    }
+
+    public function visitLion(Lion $lion)
+    {
+        $lion->roar();
+    }
+
+    public function visitDolphin(Dolphin $dolphin)
+    {
+        $dolphin->speak();
+    }
+}
+```
+
+最后，我们可以这样来使用
+```php
+$monkey = new Monkey();
+$lion = new Lion();
+$dolphin = new Dolphin();
+
+$speak = new Speak();
+
+$monkey->accept($speak);    // Ooh oo aa aa!    
+$lion->accept($speak);      // Roaaar!
+$dolphin->accept($speak);   // Tuut tutt tuutt!
+```
+
+我们可以简单地为动物创建一个继承层次结构来实现这一点，但当我们必须向动物添加新的功能是，就必须修改动物。有了访问者模式，我们就不需要需改动物来实现了，比如，我们现在向动物新增跳跃的能力
+```php
+class Jump implements AnimalOperation
+{
+    public function visitMonkey(Monkey $monkey)
+    {
+        echo 'Jumped 20 feet high! on to the tree!';
+    }
+
+    public function visitLion(Lion $lion)
+    {
+        echo 'Jumped 7 feet! Back on the ground!';
+    }
+
+    public function visitDolphin(Dolphin $dolphin)
+    {
+        echo 'Walked on water a little and disappeared';
+    }
+}
+```
+
+我们可以这样来使用
+```php
+$jump = new Jump();
+
+$monkey->accept($speak);   // Ooh oo aa aa!
+$monkey->accept($jump);    // Jumped 20 feet high! on to the tree!
+
+$lion->accept($speak);     // Roaaar!
+$lion->accept($jump);      // Jumped 7 feet! Back on the ground!
+
+$dolphin->accept($speak);  // Tuut tutt tuutt!
+$dolphin->accept($jump);   // Walked on water a little and disappeared
+```
+
+## 💡 策略模式
+现实案例
+> 我们现在需要对一组数据进行排序。我们可以通过最简单的冒泡排序来实现，但随着数据的增多，排序变得非常慢，为了解决这个问题，我们实现了快速排序。现在，我们又遇到了新的问题：虽然快排在大数据集时很快，但小数据集却很慢。为了解决这个问题，我们实现了一种策略，即小数据集用冒泡排序，大数据集用快速排序。
+
+白话版
+> 策略模式允许你根据情况切换算法或策略。
+
+维基版
+> 在计算机编程中，策略模式是一种行为型模式，它允许在运行时选择算法。
+
+### 编程示例
+将排序的例子翻译为代码。首先，我们创建一个策略接口以及不同策略的实现
+```php
+interface SortStrategy
+{
+    public function sort(array $dataset): array;
+}
+
+class BubbleSortStrategy implements SortStrategy
+{
+    public function sort(array $dataset): array
+    {
+        echo "Sorting using bubble sort";
+
+        // Do sorting
+        return $dataset;
+    }
+}
+
+class QuickSortStrategy implements SortStrategy
+{
+    public function sort(array $dataset): array
+    {
+        echo "Sorting using quick sort";
+
+        // Do sorting
+        return $dataset;
+    }
+}
+```
+
+然后，我们的调用者就可以在不同的情况下使用不同的策略
+```php
+class Sorter
+{
+    protected $sorter;
+
+    public function __construct(SortStrategy $sorter)
+    {
+        $this->sorter = $sorter;
+    }
+
+    public function sort(array $dataset): array
+    {
+        return $this->sorter->sort($dataset);
+    }
+}
+```
+
+最后，我们可以这样来使用
+```php
+$dataset = [1, 5, 4, 3, 2, 8];
+
+$sorter = new Sorter(new BubbleSortStrategy());
+$sorter->sort($dataset); // Output : Sorting using bubble sort
+
+$sorter = new Sorter(new QuickSortStrategy());
+$sorter->sort($dataset); // Output : Sorting using quick sort
+```
+
+## 💢状态模式
+现实案例
+> 假设你是一位画家，当你使用画笔来作画的时候，你用了红色的颜料，就会描绘出红色的线条，你用了蓝色的颜料时，就会描绘出蓝色的线条。
+
+白话版
+> 状态模式可以实现类的行为随着状态的不同而变化。
+
+维基版
+> 状态模式是一种行为型设计模式，它以 OOP 的方式实现状态机。在状态模式中，通过将每个单独状态实现为状态模式接口的一个继承类，而状态间的转变通过调用在模式的父类中定义的函数来实现，从而实现一个状态机。状态模式可以解释为一种策略模式，它能通过调用在模式接口中定义的方法来切换当前策略。
+
+### 编程示例
+以 Word 为例，当你为选中的字体进行相应的字体和颜色设置时，被选中文本就会发生相应的变化。
+首先，我们创建一个状态接口和实现的类
+```php
+interface WritingState
+{
+    public function write(string $words);
+}
+
+class UpperCase implements WritingState
+{
+    public function write(string $words)
+    {
+        echo strtoupper($words);
+    }
+}
+
+class LowerCase implements WritingState
+{
+    public function write(string $words)
+    {
+        echo strtolower($words);
+    }
+}
+
+class DefaultText implements WritingState
+{
+    public function write(string $words)
+    {
+        echo $words;
+    }
+}
+```
+
+然后，我们创建一个编辑器
+```php
+class TextEditor
+{
+    protected $state;
+
+    public function __construct(WritingState $state)
+    {
+        $this->state = $state;
+    }
+
+    public function setState(WritingState $state)
+    {
+        $this->state = $state;
+    }
+
+    public function type(string $words)
+    {
+        $this->state->write($words);
+    }
+}
+```
+
+最后，我们可以这样来使用
+```php
+$editor = new TextEditor(new DefaultText());
+
+$editor->type('First line');
+
+$editor->setState(new UpperCase());
+
+$editor->type('Second line');
+$editor->type('Third line');
+
+$editor->setState(new LowerCase());
+
+$editor->type('Fourth line');
+$editor->type('Fifth line');
+
+// Output:
+// First line
+// SECOND LINE
+// THIRD LINE
+// fourth line
+// fifth line
+```
+
+## 📒 模板方法模式
+现实案例
+> 假设我们需要建造一所房子，我们需要：
+> - 打地基
+> - 砌墙
+> - 盖屋顶
+> - 加盖其他层
+> 这些步骤我们无法变更，比如你无法在砌完墙之前盖屋顶，但有些步骤我们可以做一些小的修改，如，砌墙的材料可以用木头、水泥或石头
+
+白话版
+> 模板方法定义了如何执行特定算法的框架，但这些步骤由子类实现。
+
+维基版
+> 在软件工程中，模板方法模式是一种行为设计模式，它定义了操作中算法的程序框架，将一些步骤推迟到子类。它允许在不改变算法结构的情况下重新定义算法的某些步骤。
+
+### 编程示例
+假设我们有一个构建工具帮助我们测试，如代码检查、构建、生成报告等。
+首先，我们创建一个为构建算法而指定的框架的基类。
+```php
+abstract class Builder
+{
+
+    // Template method
+    final public function build()
+    {
+        $this->test();
+        $this->lint();
+        $this->assemble();
+        $this->deploy();
+    }
+
+    abstract public function test();
+    abstract public function lint();
+    abstract public function assemble();
+    abstract public function deploy();
+}
+```
+
+然后，我们需要实现基类
+```php
+class AndroidBuilder extends Builder
+{
+    public function test()
+    {
+        echo 'Running android tests';
+    }
+
+    public function lint()
+    {
+        echo 'Linting the android code';
+    }
+
+    public function assemble()
+    {
+        echo 'Assembling the android build';
+    }
+
+    public function deploy()
+    {
+        echo 'Deploying android build to server';
+    }
+}
+
+class IosBuilder extends Builder
+{
+    public function test()
+    {
+        echo 'Running ios tests';
+    }
+
+    public function lint()
+    {
+        echo 'Linting the ios code';
+    }
+
+    public function assemble()
+    {
+        echo 'Assembling the ios build';
+    }
+
+    public function deploy()
+    {
+        echo 'Deploying ios build to server';
+    }
+}
+```
+
+最后，我们可以这样来使用
+```php
+$androidBuilder = new AndroidBuilder();
+$androidBuilder->build();
+
+// Output:
+// Running android tests
+// Linting the android code
+// Assembling the android build
+// Deploying android build to server
+
+$iosBuilder = new IosBuilder();
+$iosBuilder->build();
+
+// Output:
+// Running ios tests
+// Linting the ios code
+// Assembling the ios build
+// Deploying ios build to server
+```
 
 
 ---
@@ -1731,7 +2139,7 @@ $editor->getContent(); // This is the first sentence. This is second.
 |中介者模式|包装了一系列对象相互作用的方式，使得这些对象不必相互明显作用，从而使它们可以松散偶合。当某些对象之间的作用发生改变时，不会立即影响其他的一些对象之间的作用，保证这些作用可以彼此独立的变化。	|
 |备忘录模式|备忘录对象是一个用来存储另外一个对象内部状态的快照的对象。备忘录模式的用意是在不破坏封装的条件下，将一个对象的状态捉住，并外部化，存储起来，从而可以在将来合适的时候把这个对象还原到存储起来的状态。|
 |观察者模式|在对象间定义一个一对多的联系性，由此当一个对象改变了状态，所有其他相关的对象会被通知并且自动刷新。|
-|访问者模式|封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改，接受这个操作的数据结构可以保持不变。访问者模式适用于数据结构相对未定的系统，它把数据结构和作用于结构上的操作之间的耦合解脱开，使得操作集合可以相对自由的演化。|
+|访问者模式（难）|封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改，接受这个操作的数据结构可以保持不变。访问者模式适用于数据结构相对未定的系统，它把数据结构和作用于结构上的操作之间的耦合解脱开，使得操作集合可以相对自由的演化。|
 |策略模式|定义一个算法的系列，将其各个分装，并且使他们有交互性。策略模式使得算法在用户使用的时候能独立的改变。|
 |状态模式|让一个对象在其内部状态改变的时候，其行为也随之改变。状态模式需要对每一个系统可能取得的状态创立一个状态类的子类。当系统的状态变化时，系统便改变所选的子类。|
 |模板方法模式|模板方法模式准备一个抽象类，将部分逻辑以具体方法及具体构造子类的形式实现，然后声明一些抽象方法来迫使子类实现剩余的逻辑。不同的子类可以以不同的方式实现这些抽象方法，从而对剩余的逻辑有不同的实现。先构建一个顶级逻辑框架，而将逻辑的细节留给具体的子类去实现。|
@@ -1740,7 +2148,7 @@ $editor->getContent(); // This is the first sentence. This is second.
 # 参考资料
 [1] [设计模式 (计算机) - 维基百科
 ](https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA))
-[2] [超简化描述(简体中文版)](https://github.com/haiiiiiyun/design-patterns-for-humans-cn#-%E8%A7%82%E5%AF%9F%E8%80%85observer)
+[2] [超简化描述(简体中文版)](https://github.com/haiiiiiyun/design-patterns-for-humans-cn)
 
 --- 
 # 相关设计模式资料推荐
@@ -1754,30 +2162,6 @@ $editor->getContent(); // This is the first sentence. This is second.
 2. 本翻译内容未完全按照原文翻译，个人认为有些例子不够恰当，从而举了其他例子来说明。也有一些直译后难以理解的句子也进行了相应的本地化处理
 
 ---
-# 翻译进度
-- [x] 简介 (2017-02-24)
-- [x] 创建型设计模式 - 简单工厂 (2017-02-24)
-- [x] 创建型设计模式 - 工厂方法 (2017-02-24)
-- [x] 创建型设计模式 - 抽象工厂 (2017-02-25)
-- [x] 创建型设计模式 - 建造者 (2017-02-25)
-- [x] 创建型设计模式 - 原型 (2017-02-25)
-- [x] 创建型设计模式 - 单例 (2017-02-25)
-- [x] 结构型设计模式 - 适配器 (2017-02-25)
-- [x] 结构型设计模式 - 桥接 (2017-02-26)
-- [x] 结构型设计模式 - 组合 (2017-02-26)
-- [x] 结构型设计模式 - 装饰器 (2017-02-26)
-- [x] 结构型设计模式 - 外观 (2017-02-26)
-- [x] 结构型设计模式 - 享元 (2017-02-27)
-- [x] 结构型设计模式 - 代理 (2017-02-27)
-- [x] 行为型设计模式 - 责任链 (2017-02-27)
-- [x] 行为型设计模式 - 命令 (2017-02-27)
-- [x] 行为型设计模式 - 迭代器 (2017-02-27)
-- [x] 行为型设计模式 - 中介者 (2017-02-27)
-- [x] 行为型设计模式 - 备忘录 (2017-02-27)
-- [x] 行为型设计模式 - 观察者 (2017-02-27)
-- [x] 行为型设计模式 - 访问者 (2017-02-28)
-- [x] 行为型设计模式 - 策略 (2017-02-27)
-- [x] 行为型设计模式 - 状态 (2017-02-27)
-- [x] 行为型设计模式 - 模板方法 (2019-05-31)
+# TODO
 - [ ] 翻译校审
 - [ ] 排版优化
