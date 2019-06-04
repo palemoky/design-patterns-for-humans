@@ -2191,9 +2191,9 @@ $iosBuilder->build();
 // Deploying ios build to server
 ```
 
-
 ---
-# 总览
+
+## 总览
 | 模式名称 | 描述 |
 | - | - |
 |**创建型**| |
@@ -2223,24 +2223,21 @@ $iosBuilder->build();
 |状态模式|让一个对象在其内部状态改变的时候，其行为也随之改变。状态模式需要对每一个系统可能取得的状态创立一个状态类的子类。当系统的状态变化时，系统便改变所选的子类。|
 |模板方法模式|模板方法模式准备一个抽象类，将部分逻辑以具体方法及具体构造子类的形式实现，然后声明一些抽象方法来迫使子类实现剩余的逻辑。不同的子类可以以不同的方式实现这些抽象方法，从而对剩余的逻辑有不同的实现。先构建一个顶级逻辑框架，而将逻辑的细节留给具体的子类去实现。|
 
---- 
-# 参考资料
+
+## 参考资料
 [1] [设计模式 (计算机) - 维基百科
 ](https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA))
+
 [2] [超简化描述(简体中文版)](https://github.com/haiiiiiyun/design-patterns-for-humans-cn)
 
---- 
-# 相关设计模式资料推荐
+
+## 相关资料
 [1] [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)
+
 [2] [DesignPatternsPHP 中文版](https://learnku.com/docs/php-design-patterns/2018/)
+
 [3] [图说设计模式](https://github.com/me115/design_patterns)
 
----
 # 翻译说明
 1. 当前翻译版本为 `5050fe7` on Nov 29, 2018
 2. 本翻译内容未完全按照原文翻译，个人认为有些例子不够恰当，从而举了其他例子来说明。也有一些直译后难以理解的句子也进行了相应的本地化处理
-
----
-# TODO
-- [ ] 翻译校审
-- [ ] 排版优化
