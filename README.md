@@ -34,9 +34,9 @@
 
 ---
 
-- [创建型](#创建型设计模式)
-- [结构型](#结构型设计模式)
-- [行为型](#行为型设计模式)
+- [创建型](#创建型)
+- [结构型](#结构型)
+- [行为型](#行为型)
 
 # 创建型
 
@@ -46,14 +46,14 @@
 维基版：
 > 在软件工程中，创建型设计模式是处理对象创建机制的设计模式，试图以适合情况的方式创建对象。对象创建的基本形式可能会导致设计问题或者增加设计的复杂性。创建性设计模式通过某种方式控制这个对象的创建来解决这个问题。
 
-- [简单工厂模式](#🏠简单工厂)
-- [工厂方法模式](#工厂方法)
-- [抽象工厂模式](#抽象工厂)
-- [生成器模式]()
-- [原型模式]()
-- [单例模式]()
+- [简单工厂模式](#-简单工厂simple-factory)
+- [工厂方法模式](#-工厂方法factory-method)
+- [抽象工厂模式](#-抽象工厂abstract-factory)
+- [生成器模式](#-生成器模式builder)
+- [原型模式](#-原型模式prototype)
+- [单例模式](#-单例模式singleton)
 
-## 🏠简单工厂(Simple Factory)
+## 🏠 简单工厂(Simple Factory)
 现实案例
 > 想象一下，你打算建造一座房子，此时你需要定制一些门，你可以自己购置木头和所需工具来做这扇门，也可以打一个电话给工厂，告诉他你需要一扇什么样的门，然后等待送货即可。
 
@@ -121,7 +121,7 @@ $door2 = DoorFactory::makeDoor(50, 100);
 **何时使用？**
 当创建一个对象涉及到一些逻辑处理时，把它放在一个专用的工厂中，而不是到处重复相同的代码。
 
-## 🏭工厂方法(Factory Method)
+## 🏭 工厂方法(Factory Method)
 现实案例
 > 想象一下招聘经理，他不可能面试每一个求职者，他会根据岗位或时间来决定是否委托其他同事去面试求职者。
 
@@ -426,7 +426,7 @@ $burger = (new BurgerBuilder(14))
 当对象有多种形式并避免构造函数参数过多时。
 生成器模式与工厂模式的关键区别在于：当创建单步骤流程时使用工厂模式，而创建多步骤流程时则使用生成器模式。
 
-## 🐑 原型模式（Prototype）
+## 🐑 原型模式(Prototype)
 现实案例
 > 还记得那只名叫“多莉”的绵羊吗？Bingo！就是第一只克隆羊。我们先不要过度关心这只羊是怎样产生的，只要知道是通过克隆产生的就可以了。
 
@@ -492,7 +492,7 @@ echo $cloned->getCategory(); // Mountain sheep
 **何时使用？**
 当需要一个类似于现有对象的对象，或创建的开销大于克隆时，你便可以使用原型模式。
 
-## 💍 单例模式（Singleton）
+## 💍 单例模式(Singleton)
 现实案例
 > 一个国家在一个时期只能有一位总统。当需要行使权力时，只能由总统授权，总统便是单例。
 
@@ -552,15 +552,15 @@ var_dump($president1 === $president2); // true
 维基版
 > 在软件工程中，结构设计模式是通过确定实现对象间关系的简单方式来简化设计的设计模式。
 
-- 适配器（Adapter）
-- 桥接（Bridge）
-- 组合（Composite）
-- 装饰器（Decorator）
-- 外观（Facade）
-- 享元（Flyweight）
-- 代理（Proxy）
+- [适配器模式(Adapter)](#-适配器模式adapter)
+- [桥接模式(Bridge)](#-桥接模式bridge)
+- [组合模式(Composite)](#-组合模式composite)
+- [装饰器模式(Decorator)](#-装饰器模式decorator)
+- [外观模式(Facade)](#-外观模式facade)
+- [享元模式(Flyweight)](#-享元模式flyweight)
+- [代理模式(Proxy)](#-代理模式proxy)
 
-## 🔌 适配器
+## 🔌 适配器模式(Adapter)
 现实案例
 > 想象一下，你有一些照片存储在内存卡上，你想传到电脑上。为了将照片传到电脑上，你需要一些兼容电脑端口的适配器，以使你可以将内存卡连接到电脑上。在这里，读卡器就是适配器。另一个常见的例子就是电源适配器，一个三插的插头无法直接插到两插的插座，我们需要一个转接头才能实现。最后的一个例子是，翻译可以使两个讲不通语言的人进行交流。
 
@@ -639,7 +639,7 @@ $hunter = new Hunter();
 $hunter->hunt($wildDogAdapter);
 ```
 
-## 🚡 桥接模式（Bridge）
+## 🚡 桥接模式(Bridge)
 现实案例
 > 假设你有一个网站，此时你打算支持用户修改页面主题，你会怎么做呢？为每个主题的每个页面创建多份副本？还是只创建一个主题，根据用户的设定来加载它们？桥接模式允许你以第二种方式实现。
 
@@ -734,7 +734,7 @@ echo $about->getContent(); // "About page in Dark Black";
 echo $careers->getContent(); // "Careers page in Dark Black";
 ```
 
-## 🌿 组合模式
+## 🌿 组合模式(Composite)
 ⚠️ 此处争议较大 [Wrong Composite Pattern Definition #28
 ](https://github.com/kamranahmedse/design-patterns-for-humans/issues/28)
 现实案例
@@ -863,7 +863,7 @@ $organization->addEmployee($jane);
 echo "Net salaries: " . $organization->getNetSalaries(); // Net Salaries: 27000
 ```
 
-## ☕ 装饰器
+## ☕ 装饰器模式(Decorator)
 现实案例
 > 假设你有一家汽车服务店，当顾客离店时，你会怎样计算账单呢？你将每项服务的价格累加，直到计算出总价。这里每种类型的服务都是装饰器。
 
@@ -978,7 +978,7 @@ echo $someCoffee->getCost(); // 20
 echo $someCoffee->getDescription(); // Simple Coffee, milk, whip, vanilla
 ```
 
-## 📦 外观模式
+## 📦 外观模式(Facade)
 现实案例
 > 你如何开启电脑？“当然是按下电源键了”，你回答道。事实确实如此，你通过电脑给所提供给外部的一个按钮，即可完成内部一系列的启动操作。这个复杂子系统的简单接口就是一个门面(Facade)。
 
@@ -1065,7 +1065,7 @@ $computer->turnOn(); // Ouch! Beep beep! Loading.. Ready to be used!
 $computer->turnOff(); // Bup bup buzzz! Haah! Zzzzz
 ```
 
-## 🍃 享元模式
+## 🍃 享元模式(Flyweight)
 现实案例
 > 你喝过茶吗？通常我们不会只泡一杯茶，我们会泡几杯茶与朋友共饮。享元模式就是关于共享的。
 
@@ -1141,7 +1141,7 @@ $shop->serve();
 // Serving tea to table# 5
 ```
 
-## 🎱 代理模式
+## 🎱 代理模式(Proxy)
 现实案例
 > 你用过门禁卡吗？通过一扇门有多种方式，比如门禁卡、开门按钮、熟人带领等。门的主要功能是连接两个隔离的空间，并拦截一些东西。但我们可以在普通的门上添加代理来添加一些新的功能，如报警及防御功能等。如果你仍然不太明白，那就让我用代码来更好地解释一下。
 
@@ -1224,18 +1224,18 @@ $door->close(); // Closing lab door
 维基版
 > 在软体工程中，行为型模式为设计模式的一种类型，用来识别对象间的常用交流模式并加以实现。这样，可在进行这些交流活动时增强弹性。
 
-- 责任链模式(Chain of Responsibility)
-- 命令模式(Command)
-- 迭代器模式(Iterator)
-- 中介者模式(Mediator)
-- 备忘录模式(Memento)
-- 观察者模式(Observer)
-- 访问者模式(Visitor)
-- 策略模式(Strategy)
-- 状态模式(State)
-- 模板方法模式(Template Method)
+- [责任链模式(Chain of Responsibility)](#-责任链模式chain-of-responsibility)
+- [命令模式(Command)](#-命令模式command)
+- [迭代器模式(Iterator)](#-迭代器模式iterator)
+- [中介者模式(Mediator)](#-中介者模式mediator)
+- [备忘录模式(Memento)](#-备忘录模式memento)
+- [观察者模式(Observer)](#-观察者模式observer)
+- [访问者模式(Visitor)](#-访问者模式visitor)
+- [策略模式(Strategy)](#-策略模式strategy)
+- [状态模式(State)](#-状态模式state)
+- [模板方法模式(Template Method)](#-模板方法模式template-method)
 
-## 🔗 责任链模式
+## 🔗 责任链模式(Chain of Responsibility)
 现实案例
 > 比如你的支付宝账户设置了三种支付方式：花呗、余额、银行卡，且每种支付方式都有不同的额度。花呗有 100 元，余额有 300 元，银行卡有 1000 元，这三种支付方式的支付顺序为 花呗 ==> 余额 ==> 银行卡。当你想要购买一件价格为 210 元的商品时，此时的支付过程即为责任链模式：系统首先校验花呗是否足够支付，如果不足则验证余额，最后验证银行卡。
 
@@ -1327,7 +1327,7 @@ $bank->pay(259);
 // Paid 259 using Bitcoin!
 ```
 
-## 👮 命令模式
+## 👮 命令模式(Command)
 现实案例
 > 一个非常常见的例子是你在餐厅点餐的过程。你（客户端）将你需要的菜品告知服务员（调用者），服务员再转告给后厨（接收者），最终由后厨来完成你所需要的菜品。另外的例子还有你（客户端）通过遥控器（调用者）来控制电视（接收者）。
 
@@ -1442,7 +1442,7 @@ $remote->submit($turnOff); // Darkness!
 
 命令模式还可以用于实现基于事务的系统。它会将所有执行的命令记录下来，成功提交，失败回滚。
 
-## ➿ 迭代器
+## ➿ 迭代器模式(Iterator)
 现实案例
 > 收音机就是一个很好的迭代器的案例。我们可以从某个频道开始，通过旋钮来遍历所有的节目。同样地，MP3 播放器与电视也可以通过上一曲/下一曲（上一个节目/下一个节目）来遍历所有的歌曲（节目）。换言之，它们都提供了一个接口来遍历各个频道、歌曲或节目。
 
@@ -1545,7 +1545,7 @@ foreach($stationList as $station) {
 $stationList->removeStation(new RadioStation(89)); // Will remove station 89
 ```
 
-## 👽 中介者模式
+## 👽 中介者模式(Mediator)
 现实案例
 > 当你用手机与好友聊天时，消息并不是直接被好友接收到的，而是经过网络服务商的转发处理。这里，网络服务商即为中介者。
 
@@ -1612,7 +1612,7 @@ $jane->send('Hey!');
 // Feb 14, 10:58 [Jane]: Hey!
 ```
 
-## 💾 备忘录模式
+## 💾 备忘录模式(Memento)
 现实案例
 > 以 Word 为例，当你在编辑文本时，Word 会记录下你最近的一些操作，以便你在需要撤销到某个之前的状态可以很方便的实现。
 
@@ -1692,19 +1692,98 @@ $editor->restore($saved);
 $editor->getContent(); // This is the first sentence. This is second.
 ```
 
-## 😎 观察者模式
+## 😎 观察者模式(Observer)
 现实案例
-> 
+> 一个很好的例子就是，求职者关注了一些招聘网站的职位，当有匹配的职位时，求职者会收到网站的通知。
 
 白话版
-> 
+> 定义对象间的依赖关系，以便当对象变更其状态时，通知其所有依赖项。
 
 维基版
-> 
+> 观察者模式是一种软件设计模式，在这种模式中，一个对象（主体）维护它的依赖项列表（观察者），当对象的状态改变后，它通过调用依赖对象的某个函数来自动通知它们。
 
 ### 编程示例
+将上述例子翻译为代码。首先，我们创建一个岗位
+```php
+class JobPost
+{
+    protected $title;
 
-## 🏃 访问者模式
+    public function __construct(string $title)
+    {
+        $this->title = $title;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+}
+
+class JobSeeker implements Observer
+{
+    protected $name;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
+    public function onJobPosted(JobPost $job)
+    {
+        // Do something with the job posting
+        echo 'Hi ' . $this->name . '! New job posted: '. $job->getTitle();
+    }
+}
+```
+
+然后，求职者关注该岗位
+```php
+class EmploymentAgency implements Observable
+{
+    protected $observers = [];
+
+    protected function notify(JobPost $jobPosting)
+    {
+        foreach ($this->observers as $observer) {
+            $observer->onJobPosted($jobPosting);
+        }
+    }
+
+    public function attach(Observer $observer)
+    {
+        $this->observers[] = $observer;
+    }
+
+    public function addJob(JobPost $jobPosting)
+    {
+        $this->notify($jobPosting);
+    }
+}
+```
+
+最后，我们就可以这样来使用
+```php
+// 创建求职者
+$johnDoe = new JobSeeker('John Doe');
+$janeDoe = new JobSeeker('Jane Doe');
+
+// 创建岗位并添加多个求职者
+$jobPostings = new EmploymentAgency();
+$jobPostings->attach($johnDoe);
+$jobPostings->attach($janeDoe);
+
+// 添加新的岗位，并判断是否通知了求职者
+$jobPostings->addJob(new JobPost('Software Engineer'));
+
+// 输出结果
+// Hi John Doe! New job posted: Software Engineer
+// Hi Jane Doe! New job posted: Software Engineer
+```
+
+> 该示例中的 `Observer` 与 `Observable` 接口从何而来？我查询了 PHP 文档，并未发现 SPL 中包含接口
+
+## 🏃 访问者模式(Visitor)
 现实案例
 > 想象一下去迪拜旅游的人，他门只需要办好签证，就可以在迪拜畅游无阻。你只需要告诉他们地址，他们就可以去尽情游玩。同样的，访问者模式允许你添加要访问的地点，从而使你参观更多的地方，而无需做额外的工作。
 
@@ -1843,7 +1922,7 @@ $dolphin->accept($speak);  // Tuut tutt tuutt!
 $dolphin->accept($jump);   // Walked on water a little and disappeared
 ```
 
-## 💡 策略模式
+## 💡 策略模式(Strategy)
 现实案例
 > 我们现在需要对一组数据进行排序。我们可以通过最简单的冒泡排序来实现，但随着数据的增多，排序变得非常慢，为了解决这个问题，我们实现了快速排序。现在，我们又遇到了新的问题：虽然快排在大数据集时很快，但小数据集却很慢。为了解决这个问题，我们实现了一种策略，即小数据集用冒泡排序，大数据集用快速排序。
 
@@ -1913,7 +1992,7 @@ $sorter = new Sorter(new QuickSortStrategy());
 $sorter->sort($dataset); // Output : Sorting using quick sort
 ```
 
-## 💢状态模式
+## 💢 状态模式(State)
 现实案例
 > 假设你是一位画家，当你使用画笔来作画的时候，你用了红色的颜料，就会描绘出红色的线条，你用了蓝色的颜料时，就会描绘出蓝色的线条。
 
@@ -2004,7 +2083,7 @@ $editor->type('Fifth line');
 // fifth line
 ```
 
-## 📒 模板方法模式
+## 📒 模板方法模式(Template Method)
 现实案例
 > 假设我们需要建造一所房子，我们需要：
 > - 打地基
